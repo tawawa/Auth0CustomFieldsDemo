@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Auth0CustomFieldsDemo</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="auth0_client_id">rq6srOciu42Vw0yJSahlH7IbKeFZ23oi</string>
+    <string name="auth0_domain">vjayaram-test.auth0.com</string>
+    <string name="auth0_domain_two">vjayaram.auth0.com</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="logout">Logout</string>
+    <string name="title_activity_start">StartActivity</string>
+
+</resources>
