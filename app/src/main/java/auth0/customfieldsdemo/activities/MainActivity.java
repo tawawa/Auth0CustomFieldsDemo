@@ -16,11 +16,16 @@ import android.view.View;
 import com.auth0.android.Auth0;
 import com.auth0.android.authentication.AuthenticationAPIClient;
 import com.auth0.android.authentication.AuthenticationException;
+import com.auth0.android.authentication.ParameterBuilder;
+import com.auth0.android.authentication.request.DatabaseConnectionRequest;
 import com.auth0.android.callback.BaseCallback;
+import com.auth0.android.lock.internal.configuration.Connection;
 import com.auth0.android.request.Request;
 import com.auth0.android.result.Credentials;
 import com.auth0.android.result.UserProfile;
 import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.util.Map;
 
 import auth0.customfieldsdemo.R;
 import auth0.customfieldsdemo.application.App;
@@ -32,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AuthenticationAPIClient apiClient;
     private Credentials loginCredentials;
+    private UserProfile profile;
     private TextView welcomeText;
     private TextView firstName;
     private TextView lastName;
@@ -64,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UserProfile payload) {
                 Log.d("MainActivity", payload.getEmail());
+                profile = payload;
                 updateUI(payload);
             }
 
@@ -92,5 +99,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void changePassword(View v) {
+        Log.d("change password", profile.getEmail());
+        
+        apiClient.resetPassword(profile.getEmail(), "Username-Password-Authentication")
+                .start(new BaseCallback<Void, AuthenticationException>() {
+                    @Override
+                    public void onSuccess(Void payload) {
+                        Log.d("success", "Change password requested");
+                    }
+
+                    @Override
+                    public void onFailure(AuthenticationException error) {
+                        Log.d("error", "Failed Change password requested");
+                    }
+                });
     }
 }
