@@ -10,10 +10,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:name=".application.App"
-        android:theme="@style/AppTheme">
+        android:theme="@style/MyLockTheme">
         <activity
             android:name=".activities.StartActivity"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:theme="@style/MyLockTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,7 +26,7 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/Lock.Theme">
+            android:theme="@style/MyLockTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -41,13 +42,15 @@
         <!-- Auth0 Lock End -->
 
         <activity
-            android:name=".activities.MyLockActivity"/>
+            android:name=".activities.MyLockActivity"
+            android:theme="@style/MyLockTheme"/>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/MyLockTheme" />
         <activity
-            android:name="com.auth0.android.provider.WebAuthActivity"></activity>
+            android:name="com.auth0.android.provider.WebAuthActivity"
+            android:theme="@style/MyLockTheme"></activity>
     </application>
 
 </manifest>

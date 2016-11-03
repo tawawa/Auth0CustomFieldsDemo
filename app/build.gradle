@@ -24,7 +24,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
-    compile 'com.auth0.android:lock:2.0.0-beta.3'
+    compile 'com.auth0.android:lock:2.1.0'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
 
 }

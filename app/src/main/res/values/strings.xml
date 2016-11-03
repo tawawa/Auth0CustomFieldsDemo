@@ -8,5 +8,5 @@
     <string name="last_name_hint">Last Name</string>
     <string name="logout">Logout</string>
     <string name="title_activity_start">StartActivity</string>
-
+    <string name="com_auth0_domain_name">TEST APP</string>
 </resources>
