@@ -53,6 +53,8 @@ public class MyLockActivity extends Activity {
         this.lock = Lock.newBuilder(auth0, callback)
                 //Add parameters to the build
                 .withSignUpFields(customFields)
+                .withConnectionScope("facebook", "openid email")
+                .withConnectionScope("google-oauth2", "openid email")
                 .withAuthenticationParameters(authenticationParameters)
                 .build(this);
         //lock.onCreate(this);

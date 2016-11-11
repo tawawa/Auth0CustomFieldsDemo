@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void changePassword(View v) {
         Log.d("change password", profile.getEmail());
-        
+
         apiClient.resetPassword(profile.getEmail(), "Username-Password-Authentication")
                 .start(new BaseCallback<Void, AuthenticationException>() {
                     @Override
