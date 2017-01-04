@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UserProfile payload) {
                 Log.d("MainActivity", payload.getEmail());
+                Log.d("user.user_id", payload.getId());
                 profile = payload;
                 updateUI(payload);
             }

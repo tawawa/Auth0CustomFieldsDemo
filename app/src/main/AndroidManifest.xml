@@ -50,8 +50,13 @@
             android:label="@string/title_activity_main"
             android:theme="@style/MyLockTheme" />
         <activity
-            android:name="com.auth0.android.provider.WebAuthActivity"
-            android:theme="@style/MyLockTheme"></activity>
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"/>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
     </application>
 
 </manifest>
